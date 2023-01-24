@@ -1,3 +1,12 @@
+
+/*
+ * echarts sample program
+ * Copyright (c) 2022 Cybozu
+ *
+ * Licensed under the MIT License
+ * https://opensource.org/licenses/mit-license.php
+ */
+
 import { KintoneRecordField } from '@kintone/rest-api-client'
 import { Card, Avatar, Tag } from 'antd'
 import React from 'react'
@@ -12,7 +21,9 @@ export interface KCard extends ReactTrello.DraggableCard {
   onClick?: () => void
 }
 
+// カンバンのカードに表示する、タスク担当者のコンポーネントを定義する
 const Avatars = (props: { assignee: KintoneRecordField.UserSelect }) => {
+  // 要素の定義と返却
   return (
     <Avatar.Group
       maxCount={2}
@@ -39,7 +50,9 @@ const Avatars = (props: { assignee: KintoneRecordField.UserSelect }) => {
   )
 }
 
+// カンバンのカードのコンポーネントを定義する
 export const AntdCard = (props: KCard) => {
+  // 要素の定義と返却（React UI library の Ant Design の card components を利用）
   return (
     <Card
       extra={<Tag color={props.labelColor}>{props.label}</Tag>}

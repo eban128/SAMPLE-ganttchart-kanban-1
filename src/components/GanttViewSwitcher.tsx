@@ -1,3 +1,12 @@
+
+/*
+ * echarts sample program
+ * Copyright (c) 2022 Cybozu
+ *
+ * Licensed under the MIT License
+ * https://opensource.org/licenses/mit-license.php
+ */
+
 import React from 'react'
 import { ViewMode } from 'gantt-task-react'
 import { Radio } from 'antd'
@@ -7,6 +16,7 @@ type ViewSwitcherProps = {
   onViewModeChange: (viewMode: ViewMode) => void
 }
 
+// ガントチャートの ViewMode（Quarter Day, Half Day, Day, Week, Month）を調整するラジオボタンのコンポーネントを定義する
 export const ViewSwitcher: React.FunctionComponent<ViewSwitcherProps> = ({ onViewModeChange }) => {
   return (
     <>
